@@ -1,5 +1,4 @@
-# Tugas Besar - Teori Bahasa Formal dan Automata 
-# IF2124
+# Tugas Besar - Teori Bahasa Formal dan Automata (IF2124)
 
 ## Setup
 
