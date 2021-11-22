@@ -26,19 +26,19 @@ def CYK(input, CNF):
     nonTerminal = len(CNF)
     
     parse = [[[0 for i in range(nonTerminal + 1)] for i in range(length + 1)] for i in range(length + 1)]
-    terminal1 = [None] * (nonTerminal+1)
+    terminal = [None] * (nonTerminal+1)
     nt = {}
     
     #Append
     for i, variable in enumerate(CNF):
         nt[variable] = i + 1
-        terminal1[i+1] = CNF[variable]
+        terminal[i+1] = CNF[variable]
         
     #proses parsing
     #pake algorithm diatas (wikipedia)
     for s in range(1, length+1):
         for v in range(1, nonTerminal+1):
-            for e in terminal1[v]:
+            for e in terminal[v]:
                 if(e[0] == input[s-1]):
                     parse[1][s][v] = True
                     break
@@ -47,7 +47,7 @@ def CYK(input, CNF):
         for s in range(1, (length-l+2)):
             for p in range(1, l):
                 for a in range(1, nonTerminal+1):
-                    for e in terminal1[a]:
+                    for e in terminal[a]:
                         if(len(e) != 1):
                             b = nt[e[0]]
                             c = nt[e[1]]
@@ -57,9 +57,13 @@ def CYK(input, CNF):
     
     #hasil (sementara)
     if(parse[length][1][1]):
-        print("ACC")
+        print("=====================")
+        print("===Syntax Accepted===")
+        print("=====================")
     else:
-        print("eRrOr")
+        print("=======================")
+        print("=====Syntax Error=====")
+        print("=======================")
     
 
 
