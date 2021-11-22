@@ -13,9 +13,10 @@
 | Nama                   | Link                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | Spesifkasi Tugas Besar | https://docs.google.com/document/d/1Fd8wLOP_GzJ66atpw1yK1_S1dLCFQcKFTgnePFHql7Y/edit |
+| CFG2CNF                | https://github.com/adelmassimo/CFG2CNF                                               |
 
 ### To do
 
 - [ ] file to CFG
-- [ ] CFG to CNF (pake yg uda ada, bole pk online converter)
+- [x] CFG to CNF (pake yg uda ada, bole pk online converter)
 - [x] CNF to CYK
