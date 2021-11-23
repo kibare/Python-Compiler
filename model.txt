@@ -1,7 +1,7 @@
 Terminals:
 + - * / % ( ) [ ] ^ and or number variable is ! not = > < true false string ' " if elif else : print input str float int double def break return while for in range class import as from return raise len range , pass continue with open
 Variables:
-Expr Term AddOp MulOp Factor Primary
+S VV VAR VAL ASSIGNOPS RELATION BOOL OPS STRING CONTENT COMMENT INBRACKET PRINT EXPR RAISE BREAK PASS CONTINUE IF ELIF ELSE TYPE INPUT RANGE WHILE FOR RETURN DEF ARGS ARG DEFAULTARG CLASS IMPORT FROM METHOD ARRAY
 Productions:
 S -> S S | VAR ASSIGNOPS VV | IF | PRINT | WHILE | FOR | DEF | CLASS | IMPORT | FROM | COMMENT | ARRAY
 VV -> VAR | VAL | VV OPS VV | INPUT | VV , VV | METHOD;
