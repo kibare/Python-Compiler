@@ -9,11 +9,11 @@ def readFile(filename):
     return text
 
 def testInput(input):
-    key = {"if" : "a", "elif" : "b", "else" : "c", "for" : "d", "in" : "e", "while" 
-           : "f", "continue" : "g", "pass" : "h", "break" : "i", "class" : "j", "def" 
-           : "k", "return" : "l", "as" : "m", "import" : "n", "from" : "o", "raise" 
-           : "p", "and" : "q", "or" : "r", "not" : "s", "is" : "t", "True" : "u", "False" 
-           : "v", "None" : "w", "with" : "A"}
+    key = {"False" : "a", "class" : "b", "is" : "c", "return" : "d", "None" : "e", "Continue" 
+           : "f", "for" : "g", "True" : "h", "def" : "i", "from" : "j", "while" 
+           : "k", "and" : "l", "not" : "m", "with" : "n", "as" : "o", "elif" 
+           : "p", "if" : "q", "or" : "r", "else" : "s", "import" : "t", "pass" : "u", "break" 
+           : "v", "in" : "w", "raise" : "A"}
     newInput = ""
     while input:
         x = re.search("[A-Za-z_][A-Za-z0-9_]*", input)
