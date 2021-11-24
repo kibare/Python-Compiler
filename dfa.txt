@@ -1,0 +1,13 @@
+qo,x,final
+angka,huruf,underscore
+qo
+final
+qo,angka=x
+qo,huruf=final
+qo,underscore=final
+final,angka=final
+final,huruf=final
+final,underscore=final
+x,underscore=final
+x,huruf=x
+x,underscore=x

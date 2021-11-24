@@ -61,8 +61,6 @@ def CYK(input, CNF):
         nt[variable] = i + 1
         terminal[i+1] = CNF[variable]
         
-    #proses parsing
-    #pake algorithm diatas (wikipedia)
     for s in range(1, length+1):
         for v in range(1, nonTerminal+1):
             for e in terminal[v]:
@@ -82,7 +80,7 @@ def CYK(input, CNF):
                                 parse[l][s][a] = True
                                 break
     
-    #hasil (sementara)
+    #hasil
     if(parse[length][1][1]):
         print("Accepted")
     else:
