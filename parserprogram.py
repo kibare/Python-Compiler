@@ -47,10 +47,20 @@ def testInput(input):
     newInput = re.sub("[xyz]{1}:[xyz]{1},", "", newInput)
     return (newInput + '\n')
 
-def CYK(input, CNF):
+def CYK(input, CNF, tst):
     #initialize
     length = len(input)
     nonTerminal = len(CNF)
+    lines = tst.split('\n')
+    
+    line = {}
+    pos = []
+    count = 0
+    for i in range(len(input)):
+        if (input[i] == '\n'):
+            count += 1
+            line[i] = count
+            pos.append(i)
     
     parse = [[[0 for i in range(nonTerminal + 1)] for i in range(length + 1)] for i in range(length + 1)]
     terminal = [None] * (nonTerminal+1)
@@ -61,8 +71,6 @@ def CYK(input, CNF):
         nt[variable] = i + 1
         terminal[i+1] = CNF[variable]
         
-    #proses parsing
-    #pake algorithm diatas (wikipedia)
     for s in range(1, length+1):
         for v in range(1, nonTerminal+1):
             for e in terminal[v]:
@@ -82,12 +90,20 @@ def CYK(input, CNF):
                                 parse[l][s][a] = True
                                 break
     
-    #hasil (sementara)
+    #hasil
     if(parse[length][1][1]):
         print("Accepted")
     else:
-        print("Syntax Error")
-
+        print("Syntax Error\n")
+        j = 1
+        for i in range(length, 0, -1):
+            if (parse[i][1][1]):
+                break
+            if (input[i - 1] == '\n'):
+                j = line[i - 1]
+        while (lines[j - 1][0] == ' '):
+            lines[j - 1] = lines[j - 1][1:]
+        print("Terjadi kesalahan ekspresi pada line", j, ":", lines[j - 1])
 
 # CNF
 CNF = CFG2CNF(txtToCFG("cfg.txt"))
@@ -98,7 +114,8 @@ if (len(sys.argv) < 2):
 else:
     filename = sys.argv[1]
 
+tst = readFile(filename)
 input = testInput(readFile(filename))
 
 # Parsing
-CYK(input, CNF)
+CYK(input, CNF, tst)
