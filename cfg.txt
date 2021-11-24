@@ -1,0 +1,40 @@
+# WITH - FILE OPERATIONS
+WITH_BLOCK -> WITH_HEAD WITH_BODY
+WITH_BODY -> CONTENT
+
+# BOOL OPERATIONS
+AND -> q
+OR -> r
+NOT -> s
+IS -> t
+
+# BOOL VALUES
+TRUE -> u
+FALSE -> v
+NONE -> w
+
+# SYMBOLS
+QUOTE -> '
+QQUOTE -> "
+COLON -> :
+COMMA -> ,
+DOT -> .
+PLUS -> +
+MINUS -> -
+MUL -> *
+NEWLINE -> NEWLINE NEWLINE | __new_line__
+SPACE -> SPACE SPACE | __space__
+OR_SYM -> __or__
+RELATION_OPR -> = = | ! = | < = | > = | < | > | IS
+ASSIGN_OPR -> = | + = | - = | * = | / = | % =
+ARITH_OPR -> + | - | * | / | % | * * | / /
+LOGIC_OPR -> AND | OR
+MEMBER_OPR -> IN | NOT SPACE IN
+IDENTITY_OPR -> IS | IS SPACE NOT
+BIT_OPR -> & | OR_SYM | * | > > | < < | ~\
+SQUARE_BRACKET_OPEN -> [
+SQUARE_BRACKET_CLOSE -> ]
+CURLY_BRACKET_OPEN -> {
+CURLY_BRACKET_CLOSE -> }
+PARENTHESIS_OPEN -> (
+PARENTHESIS_CLOSE -> )
